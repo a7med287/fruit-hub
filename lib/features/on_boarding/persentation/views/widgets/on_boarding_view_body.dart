@@ -7,10 +7,12 @@ class OnBoardingViewBody extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const[
-         OnBoardingPageView()
-      ],
+    return SafeArea(
+      child: Column(
+        children: const[
+           Expanded(child: OnBoardingPageView())
+        ],
+      ),
     );
   }
 }
