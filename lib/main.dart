@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'features/splash/presentation/views/splash_view.dart';
 
 void main() {
   runApp(const FruitHub());
@@ -10,8 +11,9 @@ class FruitHub extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(),
+      home: const SplashView(),
     );
   }
 }
+
 
