@@ -1,7 +1,9 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/constants.dart';
 import 'package:fruit_hub/core/utils/app_colors.dart';
 
+import '../../../../../core/widgets/custom_button.dart';
 import 'on_boarding_page_view.dart';
 
 class OnBoardingViewBody extends StatelessWidget{
@@ -20,7 +22,18 @@ class OnBoardingViewBody extends StatelessWidget{
 
          ),
          ),
+        SizedBox(
+          height: 29,
+        ),
+         Padding(
+           padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+           child: CustomButton(),
+         ),
+         SizedBox(
+          height: 43,
+        )
       ],
     );
   }
 }
+
