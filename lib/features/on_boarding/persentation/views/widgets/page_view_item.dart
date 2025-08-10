@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruit_hub/core/utils/app_images.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({super.key, required this.image, required this.backgroundImage, required this.subTitle, required this.title});
