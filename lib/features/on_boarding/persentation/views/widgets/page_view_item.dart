@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruit_hub/core/utils/app_text_styles.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({
@@ -7,12 +8,13 @@ class PageViewItem extends StatelessWidget {
     required this.image,
     required this.backgroundImage,
     required this.subTitle,
-    required this.title, required this.isVisible,
+    required this.title,
+    required this.isVisible,
   });
 
   final String image, backgroundImage, subTitle;
   final Widget title;
-  final bool isVisible ;
+  final bool isVisible;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,18 +34,15 @@ class PageViewItem extends StatelessWidget {
                 child: SvgPicture.asset(image),
               ),
               Positioned(
-                right: 16,
-                top: 16,
+                right: 8,
+                top: 8,
                 child: SafeArea(
                   child: Visibility(
                     visible: isVisible,
-                    child: Text(
-                      "تخط",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xff949D9E),
-                      ),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text("تخط", style: TextStyles.regular13.copyWith(color: Color(
+                          0xff575d5e))),
                     ),
                   ),
                 ),
@@ -55,8 +54,12 @@ class PageViewItem extends StatelessWidget {
         title,
         SizedBox(height: 24),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 29.0),
-          child: Text(textAlign: TextAlign.center, subTitle),
+          padding: EdgeInsets.symmetric(horizontal: 37.0),
+          child: Text(
+            textAlign: TextAlign.center,
+            subTitle,
+            style: TextStyles.semiBold13.copyWith(color: Color(0xff4E5556)),
+          ),
         ),
       ],
     );

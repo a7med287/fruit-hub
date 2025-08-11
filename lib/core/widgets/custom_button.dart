@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget{
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16)
             ),
-              backgroundColor: AppColors.kPrimaryColor
+              backgroundColor: AppColors.primaryColor
           ),
           onPressed: (){}, child: Text("ابدأ الان",style: TextStyle(
         fontSize: 18,
