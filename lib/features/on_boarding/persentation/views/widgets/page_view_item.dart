@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruit_hub/constants.dart';
+import 'package:fruit_hub/core/services/shared_prefrences_singletone.dart';
 import 'package:fruit_hub/core/utils/app_text_styles.dart';
 
 import '../../../../auth/presentation/views/login_view.dart';
@@ -43,6 +45,7 @@ class PageViewItem extends StatelessWidget {
                     visible: isVisible,
                     child: TextButton(
                       onPressed: () {
+                        Prefs.setBool(kIsOnBoardingSeen, true);
                         Navigator.pushReplacementNamed(context, LoginView.routeName);
                       },
                       child: Text("تخط", style: TextStyles.regular13.copyWith(color: Color(

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/helper/on_generate_routs.dart';
+import 'package:fruit_hub/core/services/shared_prefrences_singletone.dart';
 import 'features/splash/presentation/views/splash_view.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+   await Prefs.init();
   runApp(const FruitHub());
 }
 
