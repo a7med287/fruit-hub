@@ -3,7 +3,7 @@ import 'package:fruit_hub/features/on_boarding/persentation/views/widgets/on_boa
 class OnBoardingView extends StatelessWidget {
   const OnBoardingView({super.key});
 
-  static const String routeNAme = "OnBoardingView";
+  static const String routeName = "OnBoardingView";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

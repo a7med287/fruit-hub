@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/app_text_styles.dart';
+import 'package:fruit_hub/features/auth/presentation/views/login_view.dart';
 
 import '../utils/app_colors.dart';
 class CustomButton extends StatelessWidget{
@@ -17,11 +19,9 @@ class CustomButton extends StatelessWidget{
             ),
               backgroundColor: AppColors.primaryColor
           ),
-          onPressed: (){}, child: Text("ابدأ الان",style: TextStyle(
-        fontSize: 18,
-          fontWeight: FontWeight.bold,
-          color: Colors.white
-      ),)
+          onPressed: (){
+            Navigator.pushReplacementNamed(context, LoginView.routeName);
+          }, child: Text("ابدأ الان",style: TextStyles.bold16.copyWith(color: Colors.white))
       ),
     );
   }
