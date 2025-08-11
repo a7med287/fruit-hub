@@ -9,6 +9,7 @@ class OnBoardingPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView(
+      controller: pageController,
       children: [
         PageViewItem(
           image: Assets.pageViewItem1Image,
@@ -19,15 +20,17 @@ class OnBoardingPageView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [Text(" Fruit"), Text("HUB"), Text("مرحبًا بك في")],
           ),
-          isVisible: pageController.hasClients? pageController.page == 0: true,
+          isVisible:
+               true ,
         ),
         PageViewItem(
           image: Assets.pageViewItem2Image,
           backgroundImage: Assets.pageViewItem2BackImage,
           subTitle:
-          "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
+              "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
           title: Text("ابحث وتسوق"),
-          isVisible: pageController.hasClients? pageController.page != 0: false,
+          isVisible:
+             false,
         ),
       ],
     );
