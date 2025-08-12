@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_text_styles.dart';
-import 'package:fruit_hub/generated/l10n.dart';
+import 'package:fruit_hub/features/auth/presentation/views/widgets/login_view_body.dart';
+
+import '../../../../core/widgets/custom_app_bar.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -9,9 +10,11 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Text(S.of(context).title, style: TextStyles.regular26),
-      ),
+      appBar: buildAppBar(context, title: "تسجيل دخول"),
+      body: LoginViewBody(),
     );
   }
+
+
 }
+
