@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/constants.dart';
+import 'package:fruit_hub/core/utils/app_text_styles.dart';
 
 import '../../../../../core/widgets/custom_text_field.dart';
+import '../../../../../generated/l10n.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -29,6 +31,19 @@ class LoginViewBody extends StatelessWidget {
                   color: Color(0xffC9CECF),
                 ),
               ),
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                   S.of(context).forgot_password,
+                    style: TextStyles.semiBold13.copyWith(color: Color(0xff2D9F5D)),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

@@ -58,6 +58,16 @@ class S {
   String get title {
     return Intl.message('english', name: 'title', desc: '', args: []);
   }
+
+  /// `Forgot Password?`
+  String get forgot_password {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
