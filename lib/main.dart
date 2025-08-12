@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/helper/on_generate_routs.dart';
 import 'package:fruit_hub/core/services/shared_prefrences_singletone.dart';
+import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'features/splash/presentation/views/splash_view.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
@@ -25,7 +26,12 @@ class FruitHub extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      theme: ThemeData(fontFamily: "Cairo"),
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        fontFamily: "Cairo",
+        primaryColor: AppColors.primaryColor,
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+      ),
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
       debugShowCheckedModeBanner: false,
