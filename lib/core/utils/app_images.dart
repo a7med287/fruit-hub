@@ -7,6 +7,11 @@ class Assets{
   static const String pageViewItem2BackImage = "assets/images/page_view_item_2_back_image.svg";
   static const String pageViewItem1Image = "assets/images/page_view_item_1_image.svg";
   static const String pageViewItem2Image = "assets/images/page_view_item_2_image.svg";
+  static const String googleIcon = "assets/icons/google_icon.svg";
+  static const String facebookIcon = "assets/icons/facebook_icon.svg";
+  static const String appleIcon = "assets/icons/apple_icon.svg";
+
+
 
 
 
