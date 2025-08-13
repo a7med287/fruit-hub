@@ -3,12 +3,15 @@ import 'package:fruit_hub/features/on_boarding/persentation/views/on_boarding_vi
 import 'package:fruit_hub/features/splash/presentation/views/splash_view.dart';
 
 import '../../features/auth/presentation/views/login_view.dart';
+import '../../features/auth/presentation/views/signup_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings){
 
   switch(settings.name){
     case SplashView.routeName:
       return MaterialPageRoute(builder: (context) => const SplashView(),);
+     case SignupView.routeName:
+      return MaterialPageRoute(builder: (context) => const SignupView(),);
     case OnBoardingView.routeName:
       return MaterialPageRoute(builder: (context) => const OnBoardingView(),);
     case LoginView.routeName:
