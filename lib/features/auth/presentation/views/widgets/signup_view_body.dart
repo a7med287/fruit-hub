@@ -1,56 +1,89 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/constants.dart';
 import 'package:fruit_hub/core/widgets/custom_button.dart';
+import 'package:fruit_hub/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:fruit_hub/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 import '../../../../../core/widgets/custom_text_field.dart';
 import 'already_have_an_account.dart';
 
-class SignupViewBody extends StatelessWidget {
+class SignupViewBody extends StatefulWidget {
   const SignupViewBody({super.key});
 
+  @override
+  State<SignupViewBody> createState() => _SignupViewBodyState();
+}
+
+class _SignupViewBodyState extends State<SignupViewBody> {
+  GlobalKey<FormState> formKey = GlobalKey();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  late String email, password, name;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-        child: Column(
-          children:  [
-            const SizedBox(height: 24),
-            const CustomTextFormField(
-              hintText: 'الاسم كامل',
-              textInputType: TextInputType.emailAddress,
-            ),
-            const SizedBox(height: 16),
-            const CustomTextFormField(
-              hintText: 'البريد الإلكتروني',
-              textInputType: TextInputType.emailAddress,
-            ),
-            const SizedBox(height: 16),
-             CustomTextFormField(
-              hintText: 'كلمة المرور',
-              textInputType: TextInputType.visiblePassword,
-              suffixIcon: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.remove_red_eye_rounded,
-                  color: Color(0xffC9CECF),
+        child: Form(
+          key: formKey,
+          child: Column(
+            children: [
+              const SizedBox(height: 24),
+              CustomTextFormField(
+                onSaved: (value) {
+                  name = value!;
+                },
+                hintText: 'الاسم كامل',
+                textInputType: TextInputType.emailAddress,
+              ),
+              const SizedBox(height: 16),
+              CustomTextFormField(
+                onSaved: (value) {
+                  email = value!;
+                },
+                hintText: 'البريد الإلكتروني',
+                textInputType: TextInputType.emailAddress,
+              ),
+              const SizedBox(height: 16),
+              CustomTextFormField(
+                onSaved: (value) {
+                  password = value!;
+                },
+                hintText: 'كلمة المرور',
+                textInputType: TextInputType.visiblePassword,
+                suffixIcon: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.remove_red_eye_rounded,
+                    color: Color(0xffC9CECF),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 16),
-            const TermsAndConditions(),
-            SizedBox(
-              height: 30,
-            ),
-            CustomButton(text: "إنشاء حساب جديد"),
-            SizedBox(
-              height: 26,
-            ),
-            AlreadyHaveAnAccount()
-          ],
+              const SizedBox(height: 16),
+              const TermsAndConditions(),
+              SizedBox(height: 30),
+              CustomButton(
+                text: "إنشاء حساب جديد",
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    context.read<SignupCubit>().createUserWithEmailAndPassword(
+                      email,
+                      password,
+                      name,
+                    );
+                  } else {
+                    setState(() {
+                      autovalidateMode = AutovalidateMode.always;
+                    });
+                  }
+                },
+              ),
+              SizedBox(height: 26),
+              AlreadyHaveAnAccount(),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
