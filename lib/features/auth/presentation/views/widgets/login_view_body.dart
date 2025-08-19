@@ -9,8 +9,8 @@ import 'custom_social_button.dart';
 import 'dont_have_an_account.dart';
 import 'or_divider.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class SigninViewBody extends StatelessWidget {
+  const SigninViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
