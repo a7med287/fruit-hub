@@ -46,7 +46,7 @@ class PageViewItem extends StatelessWidget {
                     child: TextButton(
                       onPressed: () {
                         Prefs.setBool(kIsOnBoardingSeen, true);
-                        Navigator.pushReplacementNamed(context, LoginView.routeName);
+                        Navigator.pushReplacementNamed(context, SigninView.routeName);
                       },
                       child: Text("تخط", style: TextStyles.regular13.copyWith(color: Color(
                           0xff575d5e))),

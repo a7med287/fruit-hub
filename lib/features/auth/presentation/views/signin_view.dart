@@ -7,8 +7,8 @@ import 'package:fruit_hub/features/auth/presentation/views/widgets/login_view_bo
 
 import '../../../../core/widgets/custom_app_bar.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class SigninView extends StatelessWidget {
+  const SigninView({super.key});
 
   static const String routeName = "Login";
 

@@ -43,7 +43,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(Duration(seconds: 3),() {
       bool seenOnBoarding = Prefs.getBool(kIsOnBoardingSeen);
       if(seenOnBoarding){
-        Navigator.pushReplacementNamed(context, LoginView.routeName);
+        Navigator.pushReplacementNamed(context, SigninView.routeName);
       }else{
         Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
       }
