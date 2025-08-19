@@ -5,6 +5,7 @@ import 'package:fruit_hub/core/widgets/custom_button.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:fruit_hub/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 import '../../../../../core/widgets/custom_text_field.dart';
+import '../../../../../core/widgets/password_filed.dart';
 import 'already_have_an_account.dart';
 
 class SignupViewBody extends StatefulWidget {
@@ -44,20 +45,9 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 textInputType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 16),
-              CustomTextFormField(
-                onSaved: (value) {
-                  password = value!;
-                },
-                hintText: 'كلمة المرور',
-                textInputType: TextInputType.visiblePassword,
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.remove_red_eye_rounded,
-                    color: Color(0xffC9CECF),
-                  ),
-                ),
-              ),
+              PasswordField(onSaved: (value){
+                password = value!;
+              },),
               const SizedBox(height: 16),
               const TermsAndConditions(),
               SizedBox(height: 30),
@@ -87,3 +77,4 @@ class _SignupViewBodyState extends State<SignupViewBody> {
     );
   }
 }
+
