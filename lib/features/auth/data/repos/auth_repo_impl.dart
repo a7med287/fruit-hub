@@ -1,4 +1,3 @@
-
 import 'package:dartz/dartz.dart';
 import 'package:fruit_hub/core/errors/exceptions.dart';
 import 'package:fruit_hub/core/errors/failures.dart';
@@ -11,6 +10,7 @@ class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthService firebaseAuthService;
 
   AuthRepoImpl({required this.firebaseAuthService});
+
   @override
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
     String email,
@@ -25,8 +25,26 @@ class AuthRepoImpl extends AuthRepo {
       return right(UserModel.fromFireBaseAuth(user: user));
     } on CustomException catch (e) {
       return left(ServerFailure(message: e.message));
-    }catch (e){
-      return left(ServerFailure(message: "message"));
+    } catch (e) {
+      return left(ServerFailure(message: "error occurred, please try again later"));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(
+    String email,
+    String password,
+  ) async {
+    try {
+      var user = await firebaseAuthService.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return right(UserModel.fromFireBaseAuth(user: user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(message: e.message));
+    } catch (e) {
+      return left(ServerFailure(message: "error occurred, please try again later"));
     }
   }
 }
