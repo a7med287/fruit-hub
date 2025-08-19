@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/helper/on_generate_routs.dart';
+import 'package:fruit_hub/core/services/bloc_observer.dart';
 import 'package:fruit_hub/core/services/get_it_service.dart';
 import 'package:fruit_hub/core/services/shared_prefrences_singletone.dart';
 import 'package:fruit_hub/core/utils/app_colors.dart';
@@ -16,6 +18,7 @@ void main() async {
   );
   await Prefs.init();
   setupGetIt();
+  Bloc.observer = CustomBlocObserver();
   runApp(const FruitHub());
 }
 
