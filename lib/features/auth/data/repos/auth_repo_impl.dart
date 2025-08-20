@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:fruit_hub/core/errors/exceptions.dart';
 import 'package:fruit_hub/core/errors/failures.dart';
@@ -58,6 +60,20 @@ class AuthRepoImpl extends AuthRepo {
       var user = await firebaseAuthService.signInWithGoogle();
       return right(UserModel.fromFireBaseAuth(user: user));
     } catch (e) {
+      log("e is $e");
+      return left(
+        ServerFailure(message: "error occurred, please try again later"),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    try {
+      var user = await firebaseAuthService.signInWithFacebook();
+      return right(UserModel.fromFireBaseAuth(user: user));
+    } catch (e) {
+      log("e is $e");
       return left(
         ServerFailure(message: "error occurred, please try again later"),
       );

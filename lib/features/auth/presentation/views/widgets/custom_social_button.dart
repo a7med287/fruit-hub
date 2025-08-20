@@ -3,10 +3,11 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 class CustomSocialButton extends StatelessWidget {
   const CustomSocialButton({
-    super.key, required this.text, required this.imaPath,
+    super.key, required this.text, required this.imaPath, this.onPressed,
   });
 
   final String text,imaPath;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,7 +18,7 @@ class CustomSocialButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Row(
           children: [
             SvgPicture.asset(imaPath),

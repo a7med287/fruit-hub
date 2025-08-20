@@ -83,17 +83,26 @@ class _SigninViewBodyState extends State<SigninViewBody> {
               const  SizedBox(height: 32),
               const OrDivider(),
               const  SizedBox(height: 16),
-              const CustomSocialButton(
+               CustomSocialButton(
+                onPressed: (){
+                  context.read<SigninCubit>().signInWithGoogle();
+                },
                 text: "تسجيل بواسطة جوجل",
                 imaPath: Assets.googleIcon,
               ),
               const SizedBox(height: 16),
-              const  CustomSocialButton(
+                CustomSocialButton(
+                  onPressed: (){
+
+                  },
                 text: "تسجيل بواسطة أبل",
                 imaPath: Assets.appleIcon,
               ),
               const  SizedBox(height: 16),
-              const CustomSocialButton(
+               CustomSocialButton(
+                onPressed: (){
+                  context.read<SigninCubit>().signInWithFacebook();
+                },
                 text: "تسجيل بواسطة فيسبوك",
                 imaPath: Assets.facebookIcon,
               ),
