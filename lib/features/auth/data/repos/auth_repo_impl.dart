@@ -26,7 +26,9 @@ class AuthRepoImpl extends AuthRepo {
     } on CustomException catch (e) {
       return left(ServerFailure(message: e.message));
     } catch (e) {
-      return left(ServerFailure(message: "error occurred, please try again later"));
+      return left(
+        ServerFailure(message: "error occurred, please try again later"),
+      );
     }
   }
 
@@ -44,7 +46,21 @@ class AuthRepoImpl extends AuthRepo {
     } on CustomException catch (e) {
       return left(ServerFailure(message: e.message));
     } catch (e) {
-      return left(ServerFailure(message: "error occurred, please try again later"));
+      return left(
+        ServerFailure(message: "error occurred, please try again later"),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    try {
+      var user = await firebaseAuthService.signInWithGoogle();
+      return right(UserModel.fromFireBaseAuth(user: user));
+    } catch (e) {
+      return left(
+        ServerFailure(message: "error occurred, please try again later"),
+      );
     }
   }
 }
