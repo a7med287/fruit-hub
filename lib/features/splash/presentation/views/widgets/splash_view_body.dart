@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruit_hub/constants.dart';
 import 'package:fruit_hub/core/services/shared_prefrences_singletone.dart';
 import 'package:fruit_hub/core/utils/app_images.dart';
+import 'package:fruit_hub/features/home/presentation/views/home_view.dart';
 import 'package:fruit_hub/features/on_boarding/persentation/views/on_boarding_view.dart';
 
 import '../../../../auth/presentation/views/signin_view.dart';
@@ -42,8 +43,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   void executeNavigation() {
     Future.delayed(Duration(seconds: 3),() {
       bool seenOnBoarding = Prefs.getBool(kIsOnBoardingSeen);
+      bool isLoggedIn = Prefs.getBool(kIsLoggedIn);
       if(seenOnBoarding){
-        Navigator.pushReplacementNamed(context, SigninView.routeName);
+        if(isLoggedIn){
+          Navigator.pushReplacementNamed(context, HomeView.routeName);
+        }else{
+          Navigator.pushReplacementNamed(context, SigninView.routeName);
+        }
       }else{
         Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
       }
