@@ -19,5 +19,7 @@ abstract class AuthRepo {
 
   Future addUser( {required UserEntity user});
 
+  Future<UserEntity> getUserData({required String uId});
+
 
 }

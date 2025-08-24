@@ -36,7 +36,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   name = value!;
                 },
                 hintText: 'الاسم كامل',
-                textInputType: TextInputType.emailAddress,
+                textInputType: TextInputType.name,
               ),
               const SizedBox(height: 16),
               CustomTextFormField(
