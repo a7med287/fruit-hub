@@ -11,6 +11,10 @@ class Assets{
   static const String facebookIcon = "assets/icons/facebook_icon.svg";
   static const String appleIcon = "assets/icons/apple_icon.svg";
   static const String checkIcon = "assets/icons/check_icon.svg";
+  static const String profileImage = "assets/images/profile_image.png";
+  static const String profileImageSvg = "assets/images/profile_image.png";
+  static const String notificationIcon = "assets/icons/notification.svg";
+  static const String me = "assets/images/me.png";
 
 
 
