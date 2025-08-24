@@ -14,8 +14,8 @@ class Assets{
   static const String profileImage = "assets/images/profile_image.png";
   static const String profileImageSvg = "assets/images/profile_image.png";
   static const String notificationIcon = "assets/icons/notification.svg";
-  static const String me = "assets/images/me.png";
-
+  static const String searchIcon = "assets/icons/search-normal.svg";
+  static const String filterIcon = "assets/icons/filter_icon.svg";
 
 
 
