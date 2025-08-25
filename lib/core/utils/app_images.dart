@@ -18,7 +18,14 @@ class Assets{
   static const String filterIcon = "assets/icons/filter_icon.svg";
   static const String backgroundContainerFeaturedItem = "assets/images/background_container.svg";
   static const String watermelon = "assets/images/watermelon.png";
-
+  static const String userOutlineIcon = "assets/icons/user_outline_icon.svg";
+  static const String userBoldIcon = "assets/icons/user_bold_icon.svg";
+  static const String shoppingCartOutlineIcon = "assets/icons/shopping-cart_outline_icon.svg";
+  static const String shoppingCartBoldIcon = "assets/icons/shopping-cart_bold.svg";
+  static const String productsOutlineIcon = "assets/icons/products_outline_icon.svg";
+  static const String productsBoldIcon = "assets/icons/products_bold_icon.svg";
+  static const String homeOutlineIcon = "assets/icons/home_outline_icon.svg";
+  static const String homeBoldIcon = "assets/icons/home_bold_icon.svg";
 
 
 }

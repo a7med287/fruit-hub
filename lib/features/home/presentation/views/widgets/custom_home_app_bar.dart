@@ -16,6 +16,7 @@ class CustomHomeAppBar extends StatelessWidget {
       ),
       subtitle: Text("أحمد رزق",style: TextStyles.bold16,),
       trailing: CircleAvatar(
+        backgroundColor: Color(0xffEEF8ED),
           radius: 22 ,
           child: SvgPicture.asset(Assets.notificationIcon)
       ),

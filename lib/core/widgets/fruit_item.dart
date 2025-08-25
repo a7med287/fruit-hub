@@ -64,7 +64,7 @@ class _FruitItemState extends State<FruitItem> {
                           TextSpan(
                             text: "الكيلو",
                             style: TextStyles.semiBold13.copyWith(
-                              color: AppColors.secondaryColor,
+                              color: AppColors.lightSecondaryColor,
                             ),
                           ),
                         ],
