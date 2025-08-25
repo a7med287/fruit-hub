@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/constants.dart';
 import 'package:fruit_hub/features/home/presentation/views/widgets/featured_list.dart';
+import '../../../../../core/widgets/custom_grid_view_fruits.dart';
 import '../../../../../core/widgets/custom_search_text_filed.dart';
-import '../../../../../core/widgets/fruit_item.dart';
 import 'best_seller_header.dart';
 import 'custom_home_app_bar.dart';
 
@@ -11,32 +11,29 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: const [
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-            child: Column(
-              children: [
-                SizedBox(height: 16),
-                CustomHomeAppBar(),
-                SizedBox(height: 16),
-                CustomSearchTextField(),
-                SizedBox(height: 12),
-                FeaturedList(),
-                SizedBox(
-                  height: 12,
-                ),
-                BestSellerHeader(),
-                FruitItem(),
-              ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  SizedBox(height: 16),
+                  CustomHomeAppBar(),
+                  SizedBox(height: 16),
+                  CustomSearchTextField(),
+                  SizedBox(height: 12),
+                  FeaturedList(),
+                  SizedBox(height: 12),
+                  BestSellerHeader(),
+                  SizedBox(height: 8),
+                ],
+              ),
             ),
-          ),
-        ),
-
-      ],
+          GridViewFruits(),
+        ],
+      ),
     );
   }
 }
-
 

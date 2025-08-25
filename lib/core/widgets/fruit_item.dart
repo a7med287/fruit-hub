@@ -4,9 +4,15 @@ import '../utils/app_colors.dart';
 import '../utils/app_images.dart';
 import '../utils/app_text_styles.dart';
 
-class FruitItem extends StatelessWidget {
+class FruitItem extends StatefulWidget {
   const FruitItem({super.key});
 
+  @override
+  State<FruitItem> createState() => _FruitItemState();
+}
+
+class _FruitItemState extends State<FruitItem> {
+  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,8 +25,15 @@ class FruitItem extends StatelessWidget {
       child: Stack(
         children: [
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.favorite_border_rounded),
+            onPressed: () {
+              setState(() {
+                isFavorite = !isFavorite;
+              });
+            },
+            icon:
+                isFavorite
+                    ? Icon(Icons.favorite, color: Colors.red)
+                    : Icon(Icons.favorite_border_rounded),
           ),
           Positioned.fill(
             top: 20,
