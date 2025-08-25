@@ -17,7 +17,7 @@ class Assets{
   static const String searchIcon = "assets/icons/search-normal.svg";
   static const String filterIcon = "assets/icons/filter_icon.svg";
   static const String backgroundContainerFeaturedItem = "assets/images/background_container.svg";
-
+  static const String watermelon = "assets/images/watermelon.png";
 
 
 
