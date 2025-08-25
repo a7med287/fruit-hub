@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/constants.dart';
-import 'package:fruit_hub/core/utils/app_text_styles.dart';
 import 'package:fruit_hub/features/home/presentation/views/widgets/featured_list.dart';
 import '../../../../../core/widgets/custom_search_text_filed.dart';
+import 'best_seller_header.dart';
 import 'custom_home_app_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -33,21 +33,6 @@ class HomeViewBody extends StatelessWidget {
         ),
       ],
     );
-  }
-}
-
-class BestSellerHeader extends StatelessWidget{
-  const BestSellerHeader({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-   return Row(
-     children: [
-       Text("الأكثر مبيعًا", style: TextStyles.bold16,),
-       Spacer(),
-       Text("المزيد", style: TextStyles.regular13.copyWith(color: Color(0xff949D9E)),),
-     ],
-   );
   }
 }
 
